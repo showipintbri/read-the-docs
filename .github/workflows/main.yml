@@ -13,3 +13,8 @@ jobs:
           python-version: 3.9
       - run: pip install mkdocs-material
       - run: mkdocs build --site-dir public
+      - uses: actions/download-artifact@v2
+        with:
+          path: ~/public
+    
+
