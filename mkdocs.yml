@@ -1,2 +1,19 @@
+# Example from Material Source: https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
+
+site_name: Read the Docs
+site_url: https://docs.showipintbri.com
+site_author: Tony E. (@showipintbri)
+site_description: >-
+  Documentation site for personal reference.
+  A place to store all the one liners and how-to's I may need one day.
+  Contributions are welcomed!
+  
 theme:
   name: material
+
+
+# Page tree
+nav:
+  - Home: index.md
+  
+  
