@@ -1,7 +1,7 @@
 # Example from Material Source: https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
 
 site_name: Read the Docs
-site_url: https://docs.showipintbri.com
+site_url: https://readthedocs.showipintbri.com
 site_author: Tony E. (@showipintbri)
 site_description: >-
   Documentation site for personal reference.
@@ -15,5 +15,6 @@ theme:
 # Page tree
 nav:
   - Home: index.md
+  - Python: python.md
   
   
