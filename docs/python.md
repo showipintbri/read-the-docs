@@ -9,10 +9,10 @@ Dictionaries are a data structure made up of 'keys' and 'values' created with th
 ### Create a Dictionary
 Before you can replace, update or delete any keys or values you must instantiate the dictionary.
 
-Empty dictionary:
-```
-my_dict = {}
-```
+- Empty dictionary:
+  ```
+  my_dict = {}
+  ```
 Or instantiate with keys and values:
 ```
 my_dict = {"key1": "value1"}
