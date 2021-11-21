@@ -13,21 +13,21 @@ Before you can replace, update or delete any keys or values you must instantiate
   ```
   my_dict = {}
   ```
-Or instantiate with keys and values:
-```
-my_dict = {"key1": "value1"}
-```
+- Or instantiate with keys and values:
+  ```
+  my_dict = {'key1': 'value1'}
+  ```
 
 You can call the object directly or print the dictionary:
 ```
->>> my_dict = {"key1": "value1"}
+>>> my_dict = {'key1': 'value1'}
 
 >>> my_dict
 {'key1': 'value1'}
 ```
 Using `print()`:
 ```
->>> my_dict = {"key1": "value1"}
+>>> my_dict = {'key1': 'value1'}
 
 >>> print(my_dict)
 {'key1': 'value1'}
