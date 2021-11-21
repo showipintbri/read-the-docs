@@ -7,8 +7,9 @@ Thank you to everyone who puts code and examples out there on the internet. Here
 Dictionaries are a data structure made up of 'keys' and 'values' created with the use of curly-braces '`{}`' in Python.
 
 ### Create a Dictionary
-Before you can replace, update or delete any keys or values you must instantiate the dictionary:
-Empty dictionary.
+Before you can replace, update or delete any keys or values you must instantiate the dictionary.
+
+Empty dictionary:
 ```
 my_dict = {}
 ```
