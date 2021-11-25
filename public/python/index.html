@@ -250,6 +250,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-key-value-to-existing-dictionary" class="md-nav__link">
+    Add Key &amp; Value to Existing Dictionary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-multiple-values-to-key" class="md-nav__link">
+    Add multiple Values to Key
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -305,6 +319,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-key-value-to-existing-dictionary" class="md-nav__link">
+    Add Key &amp; Value to Existing Dictionary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-multiple-values-to-key" class="md-nav__link">
+    Add multiple Values to Key
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -328,13 +356,18 @@
 <p>Thank you to everyone who puts code and examples out there on the internet. Here's my little place to aggregate what I use and give back. </p>
 <h2 id="dictionaries">Dictionaries</h2>
 <p>Dictionaries are a data structure made up of 'keys' and 'values' created with the use of curly-braces '<code>{}</code>' in Python.</p>
+<p><strong>Rules:</strong>
+- Keys must be unique.
+- If a Key needs more than 1 Value, you must use a list, nested dictionary, tuple or other iterable.</p>
 <h3 id="create-a-dictionary">Create a Dictionary</h3>
 <p>Before you can replace, update or delete any keys or values you must instantiate the dictionary.</p>
 <ul>
-<li>Empty dictionary:
-  <code>my_dict = {}</code></li>
-<li>Or instantiate with keys and values:
-  <code>my_dict = {'key1': 'value1'}</code></li>
+<li>Empty dictionary:<br />
+<code>my_dict = {}</code></li>
+<li>Or instantiate with keys and values:<br />
+<code>my_dict = {'key1': 'value1'}
+  or
+  my_dict['key1'] = 'value1'</code></li>
 </ul>
 <p>You can call the object directly or print the dictionary:</p>
 <pre><code>&gt;&gt;&gt; my_dict = {'key1': 'value1'}
@@ -347,6 +380,33 @@
 
 &gt;&gt;&gt; print(my_dict)
 {'key1': 'value1'}
+</code></pre>
+<h3 id="add-key-value-to-existing-dictionary">Add Key &amp; Value to Existing Dictionary</h3>
+<ul>
+<li>Key must be unique</li>
+<li>If Key is not unique Value will be overwritten.</li>
+</ul>
+<pre><code># Start with a dictionary
+&gt;&gt;&gt; my_dict = {'key1': 'value1'}
+&gt;&gt;&gt; my_dict
+{'key1': 'value1'}
+
+# Create a new Key with Value
+&gt;&gt;&gt; my_dict['key2'] = 'value0'
+&gt;&gt;&gt; my_dict
+{'key1': 'value1', 'key2': 'value0'}
+
+# Update the Value for existing Key (overwrite)
+&gt;&gt;&gt; my_dict['key2'] = 'value1'
+&gt;&gt;&gt; my_dict
+{'key1': 'value1', 'key2': 'value1'}
+</code></pre>
+<h3 id="add-multiple-values-to-key">Add multiple Values to Key</h3>
+<p>I commonly use list's when I need a Key to contain multiple Values.</p>
+<p>Convert your Key with a single value to a Key with a list object as a Value:</p>
+<pre><code>&gt;&gt;&gt; my_dict['key1'] = [my_dict['key1']]
+&gt;&gt;&gt; my_dict
+{'key1': ['value1']}
 </code></pre>
                 
               
