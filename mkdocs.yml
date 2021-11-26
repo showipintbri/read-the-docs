@@ -10,6 +10,8 @@ site_description: >-
   
 theme:
   name: material
+  favicon: images/favicon.png
+  logo: assets/logo.svg
 
 
 # Page tree
