@@ -7,16 +7,33 @@ site_description: >-
   Documentation site for personal reference.
   A place to store all the one liners and how-to's I may need one day.
   Contributions are welcomed!
-  
+
+repo_url: https://github.com/showipintbri/read-the-docs
+repo_name: showipintbri/read-the-docs
+
 theme:
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
   name: material
   favicon: images/favicon.png
   logo: assets/logo.svg
-
+  icon:
+    repo: fontawesome/brands/github
 
 # Page tree
 nav:
   - Home: index.md
   - Python: python.md
-  
-  
