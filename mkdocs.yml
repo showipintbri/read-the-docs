@@ -37,3 +37,4 @@ theme:
 nav:
   - Home: index.md
   - Python: python.md
+  - Graylog: graylog.md
