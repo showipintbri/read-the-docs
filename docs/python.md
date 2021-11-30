@@ -4,25 +4,26 @@ This is one location for all things python that I've had to look up, or forgotte
 Thank you to everyone who puts code and examples out there on the internet. Here's my little place to aggregate what I use and give back. 
 
 ## Dictionaries
-Dictionaries are a data structure made up of 'keys' and 'values' created with the use of curly-braces '`{}`' in Python.
+Dictionaries are a data structure made up of '**keys**' and '**values**' created with the use of curly-braces '`{}`' in Python.
 
-**Rules:**
+**Rules:**  
 - Keys must be unique.
 - If a Key needs more than 1 Value, you must use a list, nested dictionary, tuple or other iterable.
 
 ### Create a Dictionary
 Before you can replace, update or delete any keys or values you must instantiate the dictionary.
 
-- Empty dictionary:  
-  ```
-  my_dict = {}
-  ```
-- Or instantiate with keys and values:  
-  ```
-  my_dict = {'key1': 'value1'}
-  or
-  my_dict['key1'] = 'value1'
-  ```
+#### Empty dictionary:  
+```
+my_dict = {}
+```
+
+#### Or instantiate with keys and values:  
+```
+my_dict = {'key1': 'value1'}
+or
+my_dict['key1'] = 'value1'
+```
 
 You can call the object directly or print the dictionary:
 ```
@@ -43,25 +44,29 @@ Using `print()`:
 - Key must be unique
 - If Key is not unique Value will be overwritten.
 
+#### Start with a dictionary
 ```
-# Start with a dictionary
 >>> my_dict = {'key1': 'value1'}
 >>> my_dict
 {'key1': 'value1'}
+```
 
-# Create a new Key with Value
+#### Create a new Key with Value
+```
 >>> my_dict['key2'] = 'value0'
 >>> my_dict
 {'key1': 'value1', 'key2': 'value0'}
+```
 
-# Update the Value for existing Key (overwrite)
+#### Update the Value for existing Key (overwrite)
+```
 >>> my_dict['key2'] = 'value1'
 >>> my_dict
 {'key1': 'value1', 'key2': 'value1'}
 ```
 
 ### Add multiple Values to Key
-I commonly use list's when I need a Key to contain multiple Values.
+Because a Value is a single object, I commonly use list's when I need a Key to contain multiple Values.
 
 Convert your Key with a single value to a Key with a list object as a Value:
 ```
