@@ -27,15 +27,28 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
+    - navigation.instant
+    - navigation.tracking
+  #  - navigation.sections
+    - navigation.indexes
   name: material
   favicon: images/favicon.png
   logo: assets/logo.svg
   icon:
     repo: fontawesome/brands/github
 
+extra_css:
+  - stylesheets/extra.css
+
 # Page tree
 nav:
   - Home: index.md
   - Python: python.md
-  - Graylog: graylog.md
-  - Linux: linux.md
+    - python/index.md
+    - Dictionaries: python/dictionaries.md
+  - Graylog: 
+    - graylog/index.md
+    - Field Names: graylog/field_names.md
+  - Linux:
+    - linux/index.md
+    - rsyslog: linux/rsyslog.md

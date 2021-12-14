@@ -1,11 +1,7 @@
-# Linux
-
-This page contains many linux one-liners, or software packages or things I've needed to look up, more than once.
-
-## rsyslog
+# rsyslog
 rsyslog is a linux syslog software package. [https://www.rsyslog.com/](https://www.rsyslog.com/)
 
-### start/stop/restart
+## start/stop/restart
 
 When starting/stopping/restarting the rsyslog service you'll sometimes be shown this error message:
 ```bash
@@ -19,7 +15,7 @@ Warning: Stopping rsyslog.service, but it can still be activated by:
 So whenever there is a log message coming in, rsyslog will be started on
 demand. The unit is named syslog.socket.
 
-#### To stop/start/restart/status:
+### To stop/start/restart/status:
 
 ```bash
 systemctl stop syslog.socket rsyslog.service
@@ -31,7 +27,7 @@ systemctl restart syslog.socket rsyslog.service
 systemctl status syslog.socket rsyslog.service
 ```
 
-### rsyslog.conf
+## rsyslog.conf
 
 **Reference:** [https://www.man7.org/linux/man-pages/man5/rsyslog.conf.5.html](https://www.man7.org/linux/man-pages/man5/rsyslog.conf.5.html)
 
@@ -46,7 +42,7 @@ $outchannel global,/var/log/messages,262144,/usr/sbin/logrotate /etc/logrotate.d
 *.* @@(o)st-graylog01.stech.sealingtech.org:514;RSYSLOG_SyslogProtocol23Format
 ```
 
-#### Explanation:
+### Explanation:
 
 ```text
 *.*                             : any facility . any level
