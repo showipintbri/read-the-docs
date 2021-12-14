@@ -42,8 +42,9 @@ extra_css:
 
 # Page tree
 nav:
-  - Home: index.md
-  - Python: python.md
+  - Home: 
+    - index.md
+  - Python:
     - python/index.md
     - Dictionaries: python/dictionaries.md
   - Graylog: 
