@@ -13,7 +13,7 @@ Using a laptop or computer connect to the device with both a **console cable** *
 ### Step 1: Capture The Core Dump
 Log into the device via the console cable and issue the `write core [ip.add.re.ss]` command using the IP of your workstation as the destination device.
 
-Getting a Core Dump from a Cisco3560CX took: [##]hours and [##] minutes
+Getting a Core Dump from a Cisco3560CX took: ~35 minutes and was ~528MB
 
 ```
 Switch>
