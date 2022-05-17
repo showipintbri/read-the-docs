@@ -53,3 +53,6 @@ nav:
   - Linux:
     - linux/index.md
     - rsyslog: linux/rsyslog.md
+  - Cisco:
+    - cisco/index.md
+    - Forensics: cisco/forensics.md
