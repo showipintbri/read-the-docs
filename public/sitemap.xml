@@ -6,6 +6,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://readthedocs.showipintbri.com/cisco/</loc>
+         <lastmod>2022-05-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://readthedocs.showipintbri.com/cisco/forensics/</loc>
+         <lastmod>2022-05-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://readthedocs.showipintbri.com/graylog/</loc>
          <lastmod>2022-05-17</lastmod>
          <changefreq>daily</changefreq>
