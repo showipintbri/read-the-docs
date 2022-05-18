@@ -38,6 +38,7 @@ set interfaces [interface] unit 0 family ethernet-switching port-mode access
 set interfaces [interface] unit 0 family ethernet-switching vlan members [vlan-name]
 ```
 **Example:**
+
 - `set interfaces ge-0/0/47 description "Access: Engineering Desk-002"`
 - `set interfaces ge-0/0/47 unit 0 family ethernet-switching port-mode access`
 - `set interfaces ge-0/0/47 unit 0 family ethernet-switching vlan members v30-Engineering`
@@ -48,6 +49,7 @@ set interfaces [interface] unit 0 family ethernet-switching port-mode trunk
 set interfaces [interface] unit 0 family ethernet-switching vlan members [vlan-name]
 ```
 **Example:**
+
 - `set interfaces ge-0/0/1 description "Trunk: To Engineering Dept."`
 - `set interfaces ge-0/0/1 unit 0 family ethernet-switching port-mode trunk`
 - `set interfaces ge-0/0/1 unit 0 family ethernet-switching vlan members v30-Engineering`
@@ -58,6 +60,7 @@ set interfaces [interface] unit 0 family ethernet-switching vlan members [vlan-n
 set interfaces interface-range [range-name] member-range [start-int] to [end-int]
 ```
 **Example:**
+
 - `set interfaces interface-range v30-Eng-Dept member-range ge-0/0/12 to ge-0/0/46`
 - `set interfaces interface-range v30-Eng-Dept description "Access: Engineering Department"`
 - `set interfaces interface-range v30-Eng-Dep unit 0 family ethernet-switching port-mode access`
@@ -68,7 +71,9 @@ set interfaces interface-range [range-name] member-range [start-int] to [end-int
 ```
 set routing-options static route [prefix/mask] next-hop [nh-address]
 ```
-**Example:** `set routing-options static route 0.0.0.0/0 next-hop 10.30.30.1`
+**Example:** 
+
+- `set routing-options static route 0.0.0.0/0 next-hop 10.30.30.1`
 
 
 ## Change `root` Password
