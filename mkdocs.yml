@@ -53,6 +53,9 @@ nav:
   - Linux:
     - linux/index.md
     - rsyslog: linux/rsyslog.md
+    - systemctl: linux/systemctl.md
   - Cisco:
     - cisco/index.md
     - Forensics: cisco/forensics.md
+  - Juniper:
+    - juniper/index.md
