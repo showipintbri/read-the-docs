@@ -3,16 +3,14 @@ My collection of Juniper stuff that I commonly forget.
 
 ## Default Configuration
 ```
-[edit]
-user@switch# load factory-default
-[edit]
-user@switch# delete system commit
-[edit]
-user@switch# commit
+switch# load factory-default
+switch# delete system commit
+switch# commit
 ```
 **NOTE:** You might need to set a `root-authentication` before issuing the final commit.
 
 **Reference:** 
+
 - [https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html](https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html)
 
 
@@ -29,6 +27,7 @@ set interfaces vlan unit [##] family inet address [address/mask]]
 set vlans [name] l3-interface vlan.[##]
 ```
 **Example:** 
+
 - `set interfaces vlan unit 30 family inet address 10.30.30.254/24`
 - `set vlans v30-Engineering l3-interface vlan.30`
 
