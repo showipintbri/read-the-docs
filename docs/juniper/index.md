@@ -6,10 +6,11 @@ My collection of Juniper stuff that I commonly forget.
 [edit]
 user@switch# load factory-default
 [edit]
-user@switch# delete system commit factory-settings
+user@switch# delete system commit
 [edit]
 user@switch# commit
 ```
+**NOTE:** You might need to set a `root-authentication` before issuing the final commit.
 
 **Reference:** 
 - [https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html](https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html)
@@ -71,6 +72,14 @@ set routing-options static route [prefix/mask] next-hop [nh-address]
 **Example:** `set routing-options static route 0.0.0.0/0 next-hop 10.30.30.1`
 
 
+## Change `root` Password
+```
+set system root-authentication plain-text-password
+New password: [input-password] <enter>
+Retype new password: [input-password] <enter>
+```
+
+
 ## New User
 ```
 set system login user admin class super-user
@@ -85,3 +94,15 @@ Retype new password: [input-password] <enter>
 set system services ssh
 ```
 
+## Reboot/Restart
+```
+request system reboot
+```
+
+## Shutdown
+```
+request system power-off
+or
+request system halt
+```
+? Whats the difference ?
