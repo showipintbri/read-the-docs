@@ -1,6 +1,8 @@
 # rsyslog
 rsyslog is a linux syslog software package. [https://www.rsyslog.com/](https://www.rsyslog.com/)
 
+- **Config File:** /etc/rsyslog.conf
+
 ## start/stop/restart
 
 When starting/stopping/restarting the rsyslog service you'll sometimes be shown this error message:
