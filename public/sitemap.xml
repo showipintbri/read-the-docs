@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://readthedocs.showipintbri.com/juniper/</loc>
+         <lastmod>2022-05-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://readthedocs.showipintbri.com/linux/</loc>
          <lastmod>2022-05-18</lastmod>
          <changefreq>daily</changefreq>
