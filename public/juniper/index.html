@@ -830,16 +830,15 @@
 <h1 id="juniper">Juniper</h1>
 <p>My collection of Juniper stuff that I commonly forget.</p>
 <h2 id="default-configuration">Default Configuration</h2>
-<pre><code>[edit]
-user@switch# load factory-default
-[edit]
-user@switch# delete system commit
-[edit]
-user@switch# commit
+<pre><code>switch# load factory-default
+switch# delete system commit
+switch# commit
 </code></pre>
 <p><strong>NOTE:</strong> You might need to set a <code>root-authentication</code> before issuing the final commit.</p>
-<p><strong>Reference:</strong> 
-- <a href="https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html">https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html</a></p>
+<p><strong>Reference:</strong> </p>
+<ul>
+<li><a href="https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html">https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html</a></li>
+</ul>
 <h2 id="create-vlan">Create VLAN</h2>
 <pre><code>set vlans [name] vlan-id [##]
 </code></pre>
@@ -848,9 +847,11 @@ user@switch# commit
 <pre><code>set interfaces vlan unit [##] family inet address [address/mask]]
 set vlans [name] l3-interface vlan.[##]
 </code></pre>
-<p><strong>Example:</strong> 
-- <code>set interfaces vlan unit 30 family inet address 10.30.30.254/24</code>
-- <code>set vlans v30-Engineering l3-interface vlan.30</code></p>
+<p><strong>Example:</strong> </p>
+<ul>
+<li><code>set interfaces vlan unit 30 family inet address 10.30.30.254/24</code></li>
+<li><code>set vlans v30-Engineering l3-interface vlan.30</code></li>
+</ul>
 <h2 id="switchport-access">Switchport: Access</h2>
 <pre><code>set interfaces [interface] unit 0 family ethernet-switching port-mode access
 set interfaces [interface] unit 0 family ethernet-switching vlan members [vlan-name]
