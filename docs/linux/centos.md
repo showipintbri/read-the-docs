@@ -23,3 +23,12 @@ After Editing the file restart networking:
 ```
 sudo systemctl restart network
 ```
+
+## Hostname
+See current hostname: `hostname`
+
+**Edit:** `vi /etc/hostname`
+
+Validate with: `hostnamectl`
+
+A restart is often required or logout of your current SSH session and log back in.
