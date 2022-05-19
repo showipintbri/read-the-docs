@@ -653,6 +653,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hostname" class="md-nav__link">
+    Hostname
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -925,6 +932,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hostname" class="md-nav__link">
+    Hostname
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -963,6 +977,11 @@ DNS2=8.8.8.8
 <p>After Editing the file restart networking: </p>
 <pre><code>sudo systemctl restart network
 </code></pre>
+<h2 id="hostname">Hostname</h2>
+<p>See current hostname: <code>hostname</code></p>
+<p><strong>Edit:</strong> <code>vi /etc/hostname</code></p>
+<p>Validate with: <code>hostnamectl</code></p>
+<p>A restart is often required or logout of your current SSH session and log back in.</p>
 
               
             </article>
