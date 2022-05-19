@@ -946,23 +946,23 @@
 <h1 id="centos">Centos</h1>
 <h2 id="static-ip-address">Static IP Address</h2>
 <p><strong>Edit:</strong> <code>/etc/sysconfig/network-scripts/ifcfg-[interface_name]</code></p>
-<p>```bash title="/etc/sysconfig/network-scripts/ifcfg-[interface_name]"
-TYPE=Ethernet</p>
-<p>BOOTPROTO=static
+<pre><code class="language-bash">TYPE=Ethernet
+
+BOOTPROTO=static
 NAME=eno2
 UUID=a6a9b6a7-5215-4cf1-9f74-3d03559674a9
 DEVICE=eno2
-ONBOOT=yes</p>
-<p>IPADDR=10.13.65.246
+ONBOOT=yes
+
+IPADDR=10.13.65.246
 NETMASK=255.255.255.0
 GATEWAY=10.13.65.1
 DNS1=1.1.1.1
-DNS2=8.8.8.8</p>
-<pre><code>
-After Editing the file restart networking: 
+DNS2=8.8.8.8
 </code></pre>
-<p>sudo systemctl restart network
-```</p>
+<p>After Editing the file restart networking: </p>
+<pre><code>sudo systemctl restart network
+</code></pre>
 
               
             </article>

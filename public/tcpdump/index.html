@@ -960,15 +960,12 @@
 <p>If you wanted to continuously capture traffic and write it to disks in approximately 100MB files using the base filename <code>full_capture.pcap</code>. Once the first ~100MB is written, tcpdump will create a new file with the name: <code>full_capture.pcap1</code>. This will continue, increasing the numeric value appended to the end.</p>
 <p>The conflict with the apparmor policy happens because apparmor will only allow tcpdump to write files with extensions: <code>.pcap</code> or <code>.cap</code> (in any combination of upper- and lowercase).</p>
 <p>The problem is this section of the apparmor policy: <strong><code>/etc/apparmor.d/usr.bin.tcpdump</code></strong></p>
-<p>```bash title="/etc/apparmor.d/usr.bin.tcpdump"
-  # for -r, -F and -w
-  /<strong>.[pP][cC][aA][pP] rw,
-  /</strong>.[cC][aA][pP] rw,</p>
-<pre><code>
-We can modify the policy to allow the continuous writing of files by adding the below lines or modifying the existing lines from the config section above:
-
-```bash title=&quot;/etc/apparmor.d/usr.bin.tcpdump&quot;
-  # for -r, -F and -w
+<pre><code class="language-bash">  # for -r, -F and -w
+  /**.[pP][cC][aA][pP] rw,
+  /**.[cC][aA][pP] rw,
+</code></pre>
+<p>We can modify the policy to allow the continuous writing of files by adding the below lines or modifying the existing lines from the config section above:</p>
+<pre><code class="language-bash">  # for -r, -F and -w
   /**.[pP][cC][aA][pP][0-9]*  rw,
   /**.[cC][aA][pP][0-9]*  rw,
 </code></pre>
@@ -979,19 +976,19 @@ We can modify the policy to allow the continuous writing of files by adding the 
 <li>Check the apparmor status: <strong><code>sudo aa-status</code></strong></li>
 <li>Check the logs: <strong><code>cat /var/log/syslog | grep -i denied</code></strong></li>
 </ol>
-<pre><code class="language-bash">Apr 26 20:58:00 cnmfpcap kernel: [ 2169.229999] audit: type=1400 audit(1651006680.331:31): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web-traffic&quot; pid=1905 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
-Apr 26 20:58:54 cnmfpcap kernel: [ 2223.096608] audit: type=1400 audit(1651006734.198:32): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web-traffic&quot; pid=1923 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
-Apr 26 21:00:02 cnmfpcap kernel: [ 2291.315473] audit: type=1400 audit(1651006802.421:33): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web-traffic&quot; pid=1933 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
-Apr 26 21:01:55 cnmfpcap kernel: [ 2404.315427] audit: type=1400 audit(1651006915.426:34): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web-traffic&quot; pid=1953 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=1000 ouid=1000
-Apr 26 21:02:29 cnmfpcap kernel: [ 2438.316675] audit: type=1400 audit(1651006949.432:35): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=1960 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=1000 ouid=1000
-Apr 26 21:02:40 cnmfpcap kernel: [ 2448.918463] audit: type=1400 audit(1651006960.032:36): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=1963 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=0 ouid=0
-Apr 26 21:04:15 cnmfpcap kernel: [ 2544.397543] audit: type=1400 audit(1651007055.516:37): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=1996 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
-Apr 26 21:04:23 cnmfpcap kernel: [ 2552.557682] audit: type=1400 audit(1651007063.676:38): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=1999 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=1000 ouid=1000
-Apr 26 21:05:29 cnmfpcap kernel: [ 2618.028858] audit: type=1400 audit(1651007129.151:39): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=2018 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
-Apr 26 21:05:35 cnmfpcap kernel: [ 2624.785708] audit: type=1400 audit(1651007135.907:40): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=2021 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=1000 ouid=1000
-Apr 26 21:06:04 cnmfpcap kernel: [ 2653.751938] audit: type=1400 audit(1651007164.877:41): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=2025 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
-Apr 26 22:31:05 cnmfpcap kernel: [ 7753.978615] audit: type=1400 audit(1651012265.324:42): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic.pcap1&quot; pid=2042 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
-Apr 27 09:52:34 cnmfpcap kernel: [48641.533480] audit: type=1400 audit(1651053154.580:43): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic.pcap1&quot; pid=3078 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
+<pre><code class="language-bash">Apr 26 20:58:00 hostname-pcap kernel: [ 2169.229999] audit: type=1400 audit(1651006680.331:31): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web-traffic&quot; pid=1905 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
+Apr 26 20:58:54 hostname-pcap kernel: [ 2223.096608] audit: type=1400 audit(1651006734.198:32): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web-traffic&quot; pid=1923 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
+Apr 26 21:00:02 hostname-pcap kernel: [ 2291.315473] audit: type=1400 audit(1651006802.421:33): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web-traffic&quot; pid=1933 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
+Apr 26 21:01:55 hostname-pcap kernel: [ 2404.315427] audit: type=1400 audit(1651006915.426:34): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web-traffic&quot; pid=1953 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=1000 ouid=1000
+Apr 26 21:02:29 hostname-pcap kernel: [ 2438.316675] audit: type=1400 audit(1651006949.432:35): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=1960 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=1000 ouid=1000
+Apr 26 21:02:40 hostname-pcap kernel: [ 2448.918463] audit: type=1400 audit(1651006960.032:36): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=1963 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=0 ouid=0
+Apr 26 21:04:15 hostname-pcap kernel: [ 2544.397543] audit: type=1400 audit(1651007055.516:37): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=1996 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
+Apr 26 21:04:23 hostname-pcap kernel: [ 2552.557682] audit: type=1400 audit(1651007063.676:38): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=1999 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=1000 ouid=1000
+Apr 26 21:05:29 hostname-pcap kernel: [ 2618.028858] audit: type=1400 audit(1651007129.151:39): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=2018 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
+Apr 26 21:05:35 hostname-pcap kernel: [ 2624.785708] audit: type=1400 audit(1651007135.907:40): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=2021 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=1000 ouid=1000
+Apr 26 21:06:04 hostname-pcap kernel: [ 2653.751938] audit: type=1400 audit(1651007164.877:41): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic&quot; pid=2025 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
+Apr 26 22:31:05 hostname-pcap kernel: [ 7753.978615] audit: type=1400 audit(1651012265.324:42): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic.pcap1&quot; pid=2042 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
+Apr 27 09:52:34 hostname-pcap kernel: [48641.533480] audit: type=1400 audit(1651053154.580:43): apparmor=&quot;DENIED&quot; operation=&quot;mknod&quot; profile=&quot;tcpdump&quot; name=&quot;/mnt/pcap/web_traffic.pcap1&quot; pid=3078 comm=&quot;tcpdump&quot; requested_mask=&quot;c&quot; denied_mask=&quot;c&quot; fsuid=109 ouid=109
 </code></pre>
 <ol>
 <li>Disable the tcpdump apparmor policy: 
