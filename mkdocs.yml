@@ -52,6 +52,8 @@ nav:
     - Field Names: graylog/field_names.md
   - Linux:
     - linux/index.md
+    - bash: linux/bash.md
+    - CentOS: linux/centos.md
     - rsyslog: linux/rsyslog.md
     - systemctl: linux/systemctl.md
   - Cisco:
@@ -59,3 +61,7 @@ nav:
     - Forensics: cisco/forensics.md
   - Juniper:
     - juniper/index.md
+  - Default Credentials:
+    - credentials/index.md
+  - Tcpdump:
+    - tcpdump/index.md
