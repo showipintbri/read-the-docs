@@ -56,5 +56,5 @@ RSYSLOG_SyslogProtocol23Format  : Use Protocol23Format
 
 **References:** 
 
-- "TCP_Framing" [https://rsyslog-doc.readthedocs.io/en/latest/configuration/modules/omfwd.html#action-parameters](https://rsyslog-doc.readthedocs.io/en/latest/configuration/modules/omfwd.html#action-parameters)
+- **"TCP_Framing"** [https://rsyslog-doc.readthedocs.io/en/latest/configuration/modules/omfwd.html#action-parameters](https://rsyslog-doc.readthedocs.io/en/latest/configuration/modules/omfwd.html#action-parameters)
 - 

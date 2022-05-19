@@ -3,7 +3,7 @@
 ## Static IP Address
 **Edit:** `/etc/sysconfig/network-scripts/ifcfg-[interface_name]`
 
-```bash title="/etc/sysconfig/network-scripts/ifcfg-[interface_name]"
+```bash
 TYPE=Ethernet
 
 BOOTPROTO=static
