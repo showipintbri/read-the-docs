@@ -2,92 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://readthedocs.showipintbri.com/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/cisco/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/cisco/forensics/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/credentials/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/docker-podman/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/git/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/graylog/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/graylog/field_names/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/juniper/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/linux/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/linux/bash/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/linux/centos/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/linux/rsyslog/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/linux/systemctl/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/python/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/python/dictionaries/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/tcpdump/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://readthedocs.showipintbri.com/tcpreplay/</loc>
-         <lastmod>2022-05-20</lastmod>
+         <lastmod>2022-05-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://readthedocs.showipintbri.com/zeek/</loc>
+         <lastmod>2022-05-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
