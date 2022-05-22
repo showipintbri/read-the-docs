@@ -10,6 +10,7 @@ Grab the latest from Zeek Broker's Releases on Github: [https://github.com/zeek/
 - `cmake`
 - `build-essential`
 - `libssl-dev`
+- `libpython3-dev`
 
 ```bash
 ./configure
