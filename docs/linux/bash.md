@@ -20,12 +20,12 @@ done
 ```bash
 for i in {1..450}
 do
-wget http://sharkfest-ctf.showipintbri.com:8081/$i -O /dev/null
+wget http://hostname.fqdn:8081/$i -O /dev/null
 sleep 1
 done
 ```
 
-**or as a one-liner:** `for i in {1..450}; do wget http://sharkfest-ctf.showipintbri.com:8081/$i -O /dev/null; sleep 1; done`
+**or as a one-liner:** `for i in {1..450}; do wget http://hostname.fqdn:8081/$i -O /dev/null; sleep 1; done`
 
 ## Multi-line Append
 ```bash 
