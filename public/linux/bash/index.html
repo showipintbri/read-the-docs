@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://readthedocs.showipintbri.com/linux/bash/">
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.3">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.7">
     
     
       
@@ -648,6 +648,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-loop-in-range-of-numbers" class="md-nav__link">
+    For Loop in Range of Numbers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multi-line-append" class="md-nav__link">
     Multi-line Append
   </a>
@@ -982,6 +989,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-loop-in-range-of-numbers" class="md-nav__link">
+    For Loop in Range of Numbers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multi-line-append" class="md-nav__link">
     Multi-line Append
   </a>
@@ -1054,6 +1068,14 @@ do;
 done
 </code></pre>
 <p><strong>or as a one-liner:</strong> <code>for i in $(ls *.*) do; mv $i prefix_$i; done</code></p>
+<h2 id="for-loop-in-range-of-numbers">For Loop in Range of Numbers</h2>
+<pre><code class="language-bash">for i in {1..450}
+do
+wget http://sharkfest-ctf.showipintbri.com:8081/$i -O /dev/null
+sleep 1
+done
+</code></pre>
+<p><strong>or as a one-liner:</strong> <code>for i in {1..450}; do wget http://sharkfest-ctf.showipintbri.com:8081/$i -O /dev/null; sleep 1; done</code></p>
 <h2 id="multi-line-append">Multi-line Append</h2>
 <pre><code class="language-bash">cat &gt;&gt; /path/to/existingFile.text&lt;&lt; EOF
 some text line 1
@@ -1143,10 +1165,10 @@ EOF
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f758a944.min.js"></script>
+      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
       
     
   </body>
