@@ -16,6 +16,16 @@ done
 
 **or as a one-liner:** `for i in $(ls *.*) do; mv $i prefix_$i; done`
 
+## For Loop in Range of Numbers
+```bash
+for i in {1..450}
+do
+wget http://sharkfest-ctf.showipintbri.com:8081/$i -O /dev/null
+sleep 1
+done
+```
+
+**or as a one-liner:** `for i in {1..450}; do wget http://sharkfest-ctf.showipintbri.com:8081/$i -O /dev/null; sleep 1; done`
 
 ## Multi-line Append
 ```bash 
