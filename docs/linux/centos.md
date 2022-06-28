@@ -32,3 +32,35 @@ See current hostname: `hostname`
 Validate with: `hostnamectl`
 
 A restart is often required or logout of your current SSH session and log back in.
+
+
+## Firewall
+
+**Add Port/Protocol Permanently:**
+```bash
+firewall-cmd --add-port=xxxx/tcp --permanent 
+```
+
+**NOTE: YOU MUST RESTART THE SERVICE FOR CHANGES TO TAKE EFFECT!!!**
+```bash
+systemctl restart firewalld.service
+```
+
+```bash
+[root@hostname ~]# firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: ens192
+  sources:
+  services: cockpit dhcpv6-client snmp ssh
+  ports: 9200/tcp
+  protocols:
+  forward: no
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+
+```
