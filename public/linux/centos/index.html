@@ -661,6 +661,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#firewall" class="md-nav__link">
+    Firewall
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -940,6 +947,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#firewall" class="md-nav__link">
+    Firewall
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -983,6 +997,30 @@ DNS2=8.8.8.8
 <p><strong>Edit:</strong> <code>vi /etc/hostname</code></p>
 <p>Validate with: <code>hostnamectl</code></p>
 <p>A restart is often required or logout of your current SSH session and log back in.</p>
+<h2 id="firewall">Firewall</h2>
+<p><strong>Add Port/Protocol Permanently:</strong></p>
+<pre><code class="language-bash">firewall-cmd --add-port=xxxx/tcp --permanent 
+</code></pre>
+<p><strong>NOTE: YOU MUST RESTART THE SERVICE FOR CHANGES TO TAKE EFFECT!!!</strong></p>
+<pre><code class="language-bash">systemctl restart firewalld.service
+</code></pre>
+<pre><code class="language-bash">[root@hostname ~]# firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: ens192
+  sources:
+  services: cockpit dhcpv6-client snmp ssh
+  ports: 9200/tcp
+  protocols:
+  forward: no
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+
+</code></pre>
 
               
             </article>
