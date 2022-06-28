@@ -10,3 +10,6 @@ Permissive
 [root@hostname ~]#
 ```
 
+```
+semanage port -a -t http_port_t -p tcp 9200
+```
