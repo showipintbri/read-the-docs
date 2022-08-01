@@ -21,8 +21,27 @@ Filters are written in BPF (Berkley Packet Filter).
 
 ### VLANs / 802.1q
 ```
-vlan
+'vlan'
 ```
+
+### Show Only TLS Handshake Type: Client Hello's
+```
+'(tcp[((tcp[12:1] & 0xf0) >> 2):1] = 0x16) and (tcp[((tcp[12:1] & 0xf0) >> 2)+5:1] = 0x01)'
+```
+
+### Show Only TLS Handshake Type: Server Hello's
+```
+'(tcp[((tcp[12:1] & 0xf0) >> 2):1] = 0x16) and (tcp[((tcp[12:1] & 0xf0) >> 2)+5:1] = 0x02)'
+```
+
+### Show Only TLS 1.2 Record Layer: Handshake
+```
+'tcp[((tcp[12:1] & 0xf0) >> 2):4] & 0xffffff00 = 0x16030300'
+```
+**NOTE:** Only finds the hex string in the first 3 bytes of the TCP payload. TLS Records can be layered and `0x160303` can be buried. Using this filter only can result in missed packets.
+
+![](../images/tls-handshake.png)
+
 
 # Troubleshooting
 
