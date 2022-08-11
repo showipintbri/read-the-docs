@@ -962,6 +962,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#aaa-radius-authentication" class="md-nav__link">
+    AAA - RADIUS Authentication
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1061,10 +1068,22 @@ Retype new password: [input-password] &lt;enter&gt;
 </code></pre>
 <h2 id="shutdown">Shutdown</h2>
 <pre><code>request system power-off
-or
+or (? Whats the difference ?)
 request system halt
 </code></pre>
-<p>? Whats the difference ?</p>
+<h2 id="aaa-radius-authentication">AAA - RADIUS Authentication</h2>
+<pre><code># This is required for the RADIUS users to assume this profile
+set system login user remote class super-user 
+
+# 'local' doesn't need to be specified. If it can't reach RADIUS it will fall back to local users
+set system services ssh authentication-order radius 
+
+set system radius-server [SERVER_IP] secret [clear_text_key]
+set system radius-server [SERVER_IP] timeout 15
+set system radius-server [SERVER_IP] source-address [your_src_ip]
+
+set system radius-options enhanced-accounting
+</code></pre>
 
               
             </article>
