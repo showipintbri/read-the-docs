@@ -1084,6 +1084,7 @@ set system radius-server [SERVER_IP] source-address [your_src_ip]
 
 set system radius-options enhanced-accounting
 </code></pre>
+<p>I also, like to add: <code>set system services ssh root-login deny</code> to prevent <strong>root</strong> user from logging in remotely, forcing this to be a console only credential, incase an on-site rescue is needed.</p>
 
               
             </article>
