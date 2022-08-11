@@ -106,7 +106,21 @@ request system reboot
 ## Shutdown
 ```
 request system power-off
-or
+or (? Whats the difference ?)
 request system halt
 ```
-? Whats the difference ?
+
+## AAA - RADIUS Authentication
+```
+# This is required for the RADIUS users to assume this profile
+set system login user remote class super-user 
+
+# 'local' doesn't need to be specified. If it can't reach RADIUS it will fall back to local users
+set system services ssh authentication-order radius 
+
+set system radius-server [SERVER_IP] secret [clear_text_key]
+set system radius-server [SERVER_IP] timeout 15
+set system radius-server [SERVER_IP] source-address [your_src_ip]
+
+set system radius-options enhanced-accounting
+```
