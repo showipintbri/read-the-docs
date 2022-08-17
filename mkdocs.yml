@@ -59,7 +59,8 @@ nav:
   - Cisco:
     - cisco/index.md
     - Forensics: cisco/forensics.md
-    - Packet Capture: cisco/capture.md
+    - "Packet Capture: ASA": cisco/capture-asa.md
+    - "Packet Capture: 3850": cisco/capture-3850.md
   - Juniper:
     - juniper/index.md
   - Default Credentials:
