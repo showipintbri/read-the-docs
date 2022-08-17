@@ -3,8 +3,10 @@
 ## Start a Capture
 ```
 enable
-capture [name] interface [int_name] match ip 192.168.10.10 255.255.255.255 203.0.113.3 255.255.255.255
+capture [name] interface [int_name] match ip [src_host] [src_subnet_mask] [dst_host] [dst_subnet_mask]
 
+Example:
+capture testcapture interface inside match ip 192.168.100.99 255.255.255.255 8.8.8.8 255.255.255.255
 ```
 
 ## Stop a Capture
@@ -28,11 +30,7 @@ clear capture /all #Clears the buffers for all captures
 
 ## Download the Capture
 
-From a workstation navigate to: https://<ip_of_asa>/admin/capture/<capture_name>/pcap
-
-or 
-
-From the ASA:
+From a workstation navigate to: `https://<ip_of_asa>/admin/capture/<capture_name>/pcap` or from the ASA:
 ```
 copy /pcap capture:<capture-name> tftp://<server-ip-address>
 ```
