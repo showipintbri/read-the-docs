@@ -59,6 +59,7 @@ nav:
   - Cisco:
     - cisco/index.md
     - Forensics: cisco/forensics.md
+    - Packet Capture: cisco/capture.md
   - Juniper:
     - juniper/index.md
   - Default Credentials:
