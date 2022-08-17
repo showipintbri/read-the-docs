@@ -1019,8 +1019,10 @@
 <h1 id="packet-captures-asa">Packet Captures: ASA</h1>
 <h2 id="start-a-capture">Start a Capture</h2>
 <pre><code>enable
-capture [name] interface [int_name] match ip 192.168.10.10 255.255.255.255 203.0.113.3 255.255.255.255
+capture [name] interface [int_name] match ip [src_host] [src_subnet_mask] [dst_host] [dst_subnet_mask]
 
+Example:
+capture testcapture interface inside match ip 192.168.100.99 255.255.255.255 8.8.8.8 255.255.255.255
 </code></pre>
 <h2 id="stop-a-capture">Stop a Capture</h2>
 <pre><code>no capture [name] interface [int_name]
@@ -1036,9 +1038,7 @@ capture [name] interface [int_name] match ip 192.168.10.10 255.255.255.255 203.0
 clear capture /all #Clears the buffers for all captures
 </code></pre>
 <h2 id="download-the-capture">Download the Capture</h2>
-<p>From a workstation navigate to: https://<ip_of_asa>/admin/capture/<capture_name>/pcap</p>
-<p>or </p>
-<p>From the ASA:</p>
+<p>From a workstation navigate to: <code>https://&lt;ip_of_asa&gt;/admin/capture/&lt;capture_name&gt;/pcap</code> or from the ASA:</p>
 <pre><code>copy /pcap capture:&lt;capture-name&gt; tftp://&lt;server-ip-address&gt;
 </code></pre>
 
