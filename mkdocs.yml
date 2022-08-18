@@ -70,3 +70,4 @@ nav:
   - Windows:
     - windows/index.md
     - "Packet Capture: netsh": windows/capture-netsh.md
+    - "Packet Capture: pktmon": windows/capture-pktmon.md
