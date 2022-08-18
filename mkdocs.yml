@@ -67,3 +67,6 @@ nav:
     - credentials/index.md
   - Tcpdump:
     - tcpdump/index.md
+  - Windows:
+    - windows/index.md
+    - "Packet Capture: netsh": windows/capture-netsh.md
