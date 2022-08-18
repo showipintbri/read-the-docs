@@ -136,6 +136,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://readthedocs.showipintbri.com/windows/capture-pktmon/</loc>
+         <lastmod>2022-08-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://readthedocs.showipintbri.com/zeek/</loc>
          <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
