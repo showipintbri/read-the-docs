@@ -1020,6 +1020,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wsl2-folder-location" class="md-nav__link">
+    WSL2 Folder Location
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1052,6 +1059,8 @@ Press any key to continue...
 <pre><code>Get-Service vmcompute | Restart-Service
 </code></pre>
 <p>Then start your WSL2 VM again.</p>
+<h2 id="wsl2-folder-location">WSL2 Folder Location</h2>
+<p><code>\\wsl$\[wsl_vm-name]\home</code> maps to the <code>/home/</code> folder inside the VM.</p>
 
 
 
