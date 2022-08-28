@@ -19,3 +19,6 @@ Get-Service vmcompute | Restart-Service
 ```
 
 Then start your WSL2 VM again.
+
+## WSL2 Folder Location
+`\\wsl$\[wsl_vm-name]\home` maps to the `/home/` folder inside the VM.
