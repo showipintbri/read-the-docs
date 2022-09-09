@@ -71,3 +71,5 @@ nav:
     - windows/index.md
     - "Packet Capture: netsh": windows/capture-netsh.md
     - "Packet Capture: pktmon": windows/capture-pktmon.md
+  - Elastic:
+    - elastic/index.md
