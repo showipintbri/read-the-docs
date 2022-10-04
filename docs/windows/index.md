@@ -6,6 +6,12 @@ Step from 1 to 450 in steps of 1.
 FOR /L %i IN (1,1,450) DO curl http://hostname.fqdn/%i -o NUL: -s && TIMEOUT /T 1 /NOBREAK
 ```
 
+## For Loop w/ Files
+Base64 encode files from folder.
+```
+FOR /F %i IN ('dir *.txt') DO certutil -encode %i %i.b64
+```
+
 ## WSL2 Error
 To fix the error:
 ```
