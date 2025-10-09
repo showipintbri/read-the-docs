@@ -129,4 +129,71 @@ set system radius-options enhanced-accounting
   
 I also, like to add: `set system services ssh root-login deny` to prevent **root** user from logging in remotely, forcing this to be a console only credential, incase an on-site rescue is needed.
 
+## IKEv2 IPSEC Site-to-Site Tunnel
+```
+# -------------------------
+# IKE Phase 1 (IKEv2)
+# -------------------------
+set security ike proposal IKEV2-PROP authentication-method pre-shared-keys
+set security ike proposal IKEV2-PROP dh-group group14
+set security ike proposal IKEV2-PROP encryption-algorithm aes-256-gcm
+set security ike proposal IKEV2-PROP lifetime-seconds 28800
+set security ike proposal IKEV2-PROP authentication-algorithm hmac-sha-256-128
+
+set security ike policy IKEV2-POL mode main
+set security ike policy IKEV2-POL proposals IKEV2-PROP
+set security ike policy IKEV2-POL pre-shared-key ascii-text "SuperSecret123"
+
+set security ike gateway GW-TO-SRXB ike-policy IKEV2-POL
+set security ike gateway GW-TO-SRXB address 203.0.113.2
+set security ike gateway GW-TO-SRXB external-interface ge-0/0/0.0
+set security ike gateway GW-TO-SRXB version v2-only
+set security ike gateway GW-TO-SRXB local-identity inet 198.51.100.1
+set security ike gateway GW-TO-SRXB remote-identity inet 203.0.113.2
+set security ike gateway GW-TO-SRXB dead-peer-detection interval 10 retry 3
+
+# -------------------------
+# IPsec Phase 2
+# -------------------------
+set security ipsec proposal IPSEC-PROP protocol esp
+set security ipsec proposal IPSEC-PROP authentication-algorithm hmac-sha-256-128
+set security ipsec proposal IPSEC-PROP encryption-algorithm aes-256-gcm
+set security ipsec proposal IPSEC-PROP lifetime-seconds 3600
+
+set security ipsec policy IPSEC-POL perfect-forward-secrecy keys group14
+set security ipsec policy IPSEC-POL proposals IPSEC-PROP
+
+# -------------------------
+# VPN Binding
+# -------------------------
+set security ipsec vpn VPN-TO-SRXB ike gateway GW-TO-SRXB
+set security ipsec vpn VPN-TO-SRXB ike ipsec-policy IPSEC-POL
+set security ipsec vpn VPN-TO-SRXB bind-interface st0.0
+set security ipsec vpn VPN-TO-SRXB vpn-monitor optimized
+set security ipsec vpn VPN-TO-SRXB establish-tunnels immediately
+
+# -------------------------
+# st0 interface
+# -------------------------
+set interfaces st0 unit 0 family inet address 169.254.10.1/30
+set security zones security-zone vpn-zone interfaces st0.0
+
+# -------------------------
+# Security zones & policies
+# -------------------------
+set security zones security-zone trust interfaces ge-0/0/1.0
+set security zones security-zone untrust interfaces ge-0/0/0.0
+
+set security policies from-zone trust to-zone vpn-zone policy trust-to-vpn match source-address any destination-address any application any
+set security policies from-zone trust to-zone vpn-zone policy trust-to-vpn then permit
+
+set security policies from-zone vpn-zone to-zone trust policy vpn-to-trust match source-address any destination-address any application any
+set security policies from-zone vpn-zone to-zone trust policy vpn-to-trust then permit
+
+# -------------------------
+# Routing
+# -------------------------
+set routing-options static route 10.2.2.0/24 next-hop st0.0
+
+```
 
