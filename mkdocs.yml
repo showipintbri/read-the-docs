@@ -71,6 +71,7 @@ nav:
     - systemctl: linux/systemctl.md
   - Cisco:
     - cisco/index.md
+    - "Catalyst 9500": cisco/catalyst-9500.md
     - Forensics: cisco/forensics.md
     - "Packet Capture: ASA": cisco/capture-asa.md
     - "Packet Capture: 3850": cisco/capture-3850.md
