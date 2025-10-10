@@ -1496,21 +1496,20 @@
 
 <h1 id="ipv6">IPv6</h1>
 <h2 id="ubuntu-netplan">Ubuntu: Netplan</h2>
-<p>Create a new config file. Highest one takes precendence.</p>
-<pre><code class="language-bash">touch /etc/netplan/99-ipv6.yaml
+<p>Create a new config file. Highest one takes precendence.
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>/etc/netplan/99-ipv6.yaml
 
 -------------------------------
 network:
-  ethernets:
-    ens160:
-      dhcp6: true
-      accept-ra: true     # Host will use SLAAC to configure its address and gateway
-      addresses: ['fd10::10/64'] #ULA address for my site
-      nameservers:
-          addresses: ['2606:4700:4700::1111'] #Cloudflare DNS
-  version: 2
-
-</code></pre>
+<span class="w">  </span>ethernets:
+<span class="w">    </span>ens160:
+<span class="w">      </span>dhcp6:<span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>accept-ra:<span class="w"> </span><span class="nb">true</span><span class="w">     </span><span class="c1"># Host will use SLAAC to configure its address and gateway</span>
+<span class="w">      </span>addresses:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;fd10::10/64&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1">#ULA address for my site</span>
+<span class="w">      </span>nameservers:
+<span class="w">          </span>addresses:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;2606:4700:4700::1111&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1">#Cloudflare DNS</span>
+<span class="w">  </span>version:<span class="w"> </span><span class="m">2</span>
+</code></pre></div></p>
 
 
 

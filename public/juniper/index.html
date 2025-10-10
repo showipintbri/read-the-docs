@@ -1625,87 +1625,87 @@
 <h1 id="juniper">Juniper</h1>
 <p>My collection of Juniper stuff that I commonly forget.</p>
 <h2 id="default-configuration">Default Configuration</h2>
-<pre><code>switch# load factory-default
+<p><div class="highlight"><pre><span></span><code>switch# load factory-default
 switch# delete system commit
 switch# commit
-</code></pre>
-<p><strong>NOTE:</strong> You might need to set a <code>root-authentication</code> before issuing the final commit.</p>
+</code></pre></div>
+<strong>NOTE:</strong> You might need to set a <code>root-authentication</code> before issuing the final commit.</p>
 <p><strong>Reference:</strong> </p>
 <ul>
 <li><a href="https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html">https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-factory-default.html</a></li>
 </ul>
 <h2 id="create-vlan">Create VLAN</h2>
-<pre><code>set vlans [name] vlan-id [##]
-</code></pre>
-<p><strong>Example:</strong> <code>set vlans v30-Engineering vlan-id 30</code></p>
+<p><div class="highlight"><pre><span></span><code>set vlans [name] vlan-id [##]
+</code></pre></div>
+<strong>Example:</strong> <code>set vlans v30-Engineering vlan-id 30</code></p>
 <h2 id="create-vlan-interface-l3">Create VLAN Interface (L3)</h2>
-<pre><code>set interfaces vlan unit [##] family inet address [address/mask]]
+<p><div class="highlight"><pre><span></span><code>set interfaces vlan unit [##] family inet address [address/mask]]
 set vlans [name] l3-interface vlan.[##]
-</code></pre>
-<p><strong>Example:</strong> </p>
-<pre><code>set interfaces vlan unit 30 family inet address 10.30.30.254/24
+</code></pre></div>
+<strong>Example:</strong> 
+<div class="highlight"><pre><span></span><code>set interfaces vlan unit 30 family inet address 10.30.30.254/24
 set vlans v30-Engineering l3-interface vlan.30
-</code></pre>
+</code></pre></div></p>
 <h2 id="switchport-access">Switchport: Access</h2>
-<pre><code>set interfaces [interface] unit 0 family ethernet-switching port-mode access
+<p><div class="highlight"><pre><span></span><code>set interfaces [interface] unit 0 family ethernet-switching port-mode access
 set interfaces [interface] unit 0 family ethernet-switching vlan members [vlan-name]
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>set interfaces ge-0/0/47 description &quot;Access: Engineering Desk-002&quot;
+</code></pre></div>
+<strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>set interfaces ge-0/0/47 description &quot;Access: Engineering Desk-002&quot;
 set interfaces ge-0/0/47 unit 0 family ethernet-switching port-mode access
 set interfaces ge-0/0/47 unit 0 family ethernet-switching vlan members v30-Engineering
-</code></pre>
+</code></pre></div></p>
 <h2 id="switchport-trunk">Switchport: Trunk</h2>
-<pre><code>set interfaces [interface] unit 0 family ethernet-switching port-mode trunk
+<p><div class="highlight"><pre><span></span><code>set interfaces [interface] unit 0 family ethernet-switching port-mode trunk
 set interfaces [interface] unit 0 family ethernet-switching vlan members [vlan-name]
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>set interfaces ge-0/0/1 description &quot;Trunk: To Engineering Dept.&quot;
+</code></pre></div>
+<strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>set interfaces ge-0/0/1 description &quot;Trunk: To Engineering Dept.&quot;
 set interfaces ge-0/0/1 unit 0 family ethernet-switching port-mode trunk
 set interfaces ge-0/0/1 unit 0 family ethernet-switching vlan members v30-Engineering
-</code></pre>
+</code></pre></div></p>
 <h2 id="interface-range">Interface Range</h2>
-<pre><code>set interfaces interface-range [range-name] member-range [start-int] to [end-int]
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>set interfaces interface-range v30-Eng-Dept member-range ge-0/0/12 to ge-0/0/46`
+<p><div class="highlight"><pre><span></span><code>set interfaces interface-range [range-name] member-range [start-int] to [end-int]
+</code></pre></div>
+<strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>set interfaces interface-range v30-Eng-Dept member-range ge-0/0/12 to ge-0/0/46`
 set interfaces interface-range v30-Eng-Dept description &quot;Access: Engineering Department&quot;`
 set interfaces interface-range v30-Eng-Dep unit 0 family ethernet-switching port-mode access`
 set interfaces interface-range v30-Eng-Dep unit 0 family ethernet-switching vlan members v30-Engineering`
-</code></pre>
+</code></pre></div></p>
 <h2 id="static-route">Static Route</h2>
-<pre><code>set routing-options static route [prefix/mask] next-hop [nh-address]
-</code></pre>
-<p><strong>Example:</strong> </p>
-<pre><code>set routing-options static route 0.0.0.0/0 next-hop 10.30.30.1`
-</code></pre>
+<p><div class="highlight"><pre><span></span><code>set routing-options static route [prefix/mask] next-hop [nh-address]
+</code></pre></div>
+<strong>Example:</strong> 
+<div class="highlight"><pre><span></span><code>set routing-options static route 0.0.0.0/0 next-hop 10.30.30.1`
+</code></pre></div></p>
 <h2 id="change-root-password">Change <code>root</code> Password</h2>
-<pre><code>set system root-authentication plain-text-password
+<div class="highlight"><pre><span></span><code>set system root-authentication plain-text-password
 New password: [input-password] &lt;enter&gt;
 Retype new password: [input-password] &lt;enter&gt;
-</code></pre>
+</code></pre></div>
 <h2 id="new-user">New User</h2>
-<pre><code>set system login user admin class super-user
+<div class="highlight"><pre><span></span><code>set system login user admin class super-user
 set system login user admin authentication plain-text-password &lt;enter&gt;
 New password: [input-password] &lt;enter&gt;
 Retype new password: [input-password] &lt;enter&gt;
-</code></pre>
+</code></pre></div>
 <h2 id="ssh-access">SSH Access</h2>
-<pre><code>set system services ssh
-</code></pre>
+<div class="highlight"><pre><span></span><code>set system services ssh
+</code></pre></div>
 <h2 id="rebootrestart">Reboot/Restart</h2>
-<pre><code>request system reboot
-</code></pre>
+<div class="highlight"><pre><span></span><code>request system reboot
+</code></pre></div>
 <h2 id="shutdown">Shutdown</h2>
-<pre><code>request system power-off
+<div class="highlight"><pre><span></span><code>request system power-off
 or (? Whats the difference ?)
 request system halt
-</code></pre>
+</code></pre></div>
 <h2 id="aaa-radius-authentication">AAA - RADIUS Authentication</h2>
-<pre><code># This is required for the RADIUS users to assume this profile
+<div class="highlight"><pre><span></span><code># This is required for the RADIUS users to assume this profile
 set system login user remote class super-user 
 
-# 'local' doesn't need to be specified. If it can't reach RADIUS it will fall back to local users
+# &#39;local&#39; doesn&#39;t need to be specified. If it can&#39;t reach RADIUS it will fall back to local users
 set system services ssh authentication-order radius 
 
 set system radius-server [SERVER_IP] secret [clear_text_key]
@@ -1713,10 +1713,10 @@ set system radius-server [SERVER_IP] timeout 15
 set system radius-server [SERVER_IP] source-address [your_src_ip]
 
 set system radius-options enhanced-accounting
-</code></pre>
+</code></pre></div>
 <p>I also, like to add: <code>set system services ssh root-login deny</code> to prevent <strong>root</strong> user from logging in remotely, forcing this to be a console only credential, incase an on-site rescue is needed.</p>
 <h2 id="ikev2-ipsec-site-to-site-tunnel">IKEv2 IPSEC Site-to-Site Tunnel</h2>
-<pre><code># -------------------------
+<div class="highlight"><pre><span></span><code># -------------------------
 # IKE Phase 1 (IKEv2)
 # -------------------------
 set security ike proposal IKEV2-PROP authentication-method pre-shared-keys
@@ -1779,8 +1779,7 @@ set security policies from-zone vpn-zone to-zone trust policy vpn-to-trust then 
 # Routing
 # -------------------------
 set routing-options static route 10.2.2.0/24 next-hop st0.0
-
-</code></pre>
+</code></pre></div>
 
 
 

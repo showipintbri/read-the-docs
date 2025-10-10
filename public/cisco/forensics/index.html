@@ -1597,15 +1597,14 @@
 <h3 id="step-1-capture-the-core-dump">Step 1: Capture The Core Dump</h3>
 <p>Log into the device via the console cable and issue the <code>write core [ip.add.re.ss]</code> command using the IP of your workstation as the destination device.</p>
 <p>Getting a Core Dump from a Cisco3560CX took: ~35 minutes and was ~528MB</p>
-<pre><code>Switch&gt;
+<div class="highlight"><pre><span></span><code>Switch&gt;
 Switch&gt; enable
 Switch#
 Switch# write core xx.xx.xx.1
 Base name of core files to write [Switch-core]?
 writing uncompressed tftp://xx.xx.xx.1/Switch-corecoredump
 !!!!!!!!!!!!!!!!!!!! [...OMITTED...]
-
-</code></pre>
+</code></pre></div>
 <p><strong>References:</strong> </p>
 <ul>
 <li>Creating Core Dumps: <a href="https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-software-releases-122-mainline/12687-appA.html">https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-software-releases-122-mainline/12687-appA.html</a></li>

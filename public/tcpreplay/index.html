@@ -1498,22 +1498,22 @@
 <h2 id="basic-usage">Basic Usage</h2>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <h2 id="unsupported-dlt-type">Unsupported DLT Type</h2>
-<p>Using the command <strong><code>tcpreplay -i [interface] [filename.pcap]</code></strong> to replay a *.pcap and getting alot of Warnings on the screen:</p>
-<pre><code class="language-bash">Warning: Unable to process unsupported DLT Type: Ethernet (0x1)
-Warning: Unable to process unsupported DLT Type: Ethernet (0x1)
-Warning: Unable to process unsupported DLT Type: Ethernet (0x1)
-Warning: Unable to process unsupported DLT Type: Ethernet (0x1)
-Warning: Unable to process unsupported DLT Type: Ethernet (0x1)
-Warning: Unable to process unsupported DLT Type: Ethernet (0x1)
-Warning: Unable to process unsupported DLT Type: Ethernet (0x1)
+<p>Using the command <strong><code>tcpreplay -i [interface] [filename.pcap]</code></strong> to replay a *.pcap and getting alot of Warnings on the screen:
+<div class="highlight"><pre><span></span><code>Warning:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span>unsupported<span class="w"> </span>DLT<span class="w"> </span>Type:<span class="w"> </span>Ethernet<span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
+Warning:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span>unsupported<span class="w"> </span>DLT<span class="w"> </span>Type:<span class="w"> </span>Ethernet<span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
+Warning:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span>unsupported<span class="w"> </span>DLT<span class="w"> </span>Type:<span class="w"> </span>Ethernet<span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
+Warning:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span>unsupported<span class="w"> </span>DLT<span class="w"> </span>Type:<span class="w"> </span>Ethernet<span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
+Warning:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span>unsupported<span class="w"> </span>DLT<span class="w"> </span>Type:<span class="w"> </span>Ethernet<span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
+Warning:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span>unsupported<span class="w"> </span>DLT<span class="w"> </span>Type:<span class="w"> </span>Ethernet<span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
+Warning:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span>unsupported<span class="w"> </span>DLT<span class="w"> </span>Type:<span class="w"> </span>Ethernet<span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
 ...etc...
-</code></pre>
+</code></pre></div></p>
 <p>While the file I was using openned fine in Wireshark and parsed perfected using tcpdump, it was generating warnings in TCPReplay and I wanted to understand why so I could more reliably replay predicatable traffic.</p>
 <p>The frames and packets it was flagging with a Warning we all STP, RSTP, ARP and EIGRP. This was a Full-PCAP from a CTF event and contained all protocols. Filtering out those protocols (sans EIGRP IIRC) was the solution.</p>
 <h3 id="solution">Solution</h3>
-<p>Preparse the PCAPs excluding all non-IP traffic. To do this I used tcpdump:</p>
-<pre><code class="language-bash">tcpdump -r [in-filename] -w [out-filename] 'ip'
-</code></pre>
+<p>Preparse the PCAPs excluding all non-IP traffic. To do this I used tcpdump:
+<div class="highlight"><pre><span></span><code>tcpdump<span class="w"> </span>-r<span class="w"> </span><span class="o">[</span><span class="k">in</span>-filename<span class="o">]</span><span class="w"> </span>-w<span class="w"> </span><span class="o">[</span>out-filename<span class="o">]</span><span class="w"> </span><span class="s1">&#39;ip&#39;</span>
+</code></pre></div></p>
 <p>Tcpdump will read a *.pcap file, filter all traffic leaving only IP traffic and writing it to a new file. Now, using TCPReplay I could replay the new files without issue or Warning.</p>
 <h3 id="reference">Reference</h3>
 <ul>

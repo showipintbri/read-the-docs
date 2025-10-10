@@ -1595,52 +1595,51 @@
 <h1 id="centos">Centos</h1>
 <h2 id="static-ip-address">Static IP Address</h2>
 <p><strong>Edit:</strong> <code>/etc/sysconfig/network-scripts/ifcfg-[interface_name]</code></p>
-<pre><code class="language-bash">TYPE=Ethernet
+<div class="highlight"><pre><span></span><code><span class="nv">TYPE</span><span class="o">=</span>Ethernet
 
-BOOTPROTO=static
-NAME=eno2
-UUID=a6a9b6a7-5215-4cf1-9f74-3d03559674a9
-DEVICE=eno2
-ONBOOT=yes
+<span class="nv">BOOTPROTO</span><span class="o">=</span>static
+<span class="nv">NAME</span><span class="o">=</span>eno2
+<span class="nv">UUID</span><span class="o">=</span>a6a9b6a7-5215-4cf1-9f74-3d03559674a9
+<span class="nv">DEVICE</span><span class="o">=</span>eno2
+<span class="nv">ONBOOT</span><span class="o">=</span>yes
 
-IPADDR=10.13.65.246
-NETMASK=255.255.255.0
-GATEWAY=10.13.65.1
-DNS1=1.1.1.1
-DNS2=8.8.8.8
-</code></pre>
-<p>After Editing the file restart networking: </p>
-<pre><code>sudo systemctl restart network
-</code></pre>
+<span class="nv">IPADDR</span><span class="o">=</span><span class="m">10</span>.13.65.246
+<span class="nv">NETMASK</span><span class="o">=</span><span class="m">255</span>.255.255.0
+<span class="nv">GATEWAY</span><span class="o">=</span><span class="m">10</span>.13.65.1
+<span class="nv">DNS1</span><span class="o">=</span><span class="m">1</span>.1.1.1
+<span class="nv">DNS2</span><span class="o">=</span><span class="m">8</span>.8.8.8
+</code></pre></div>
+<p>After Editing the file restart networking: 
+<div class="highlight"><pre><span></span><code>sudo systemctl restart network
+</code></pre></div></p>
 <h2 id="hostname">Hostname</h2>
 <p>See current hostname: <code>hostname</code></p>
 <p><strong>Edit:</strong> <code>vi /etc/hostname</code></p>
 <p>Validate with: <code>hostnamectl</code></p>
 <p>A restart is often required or logout of your current SSH session and log back in.</p>
 <h2 id="firewall">Firewall</h2>
-<p><strong>Add Port/Protocol Permanently:</strong></p>
-<pre><code class="language-bash">firewall-cmd --add-port=xxxx/tcp --permanent 
-</code></pre>
-<p><strong>NOTE: YOU MUST RESTART THE SERVICE FOR CHANGES TO TAKE EFFECT!!!</strong></p>
-<pre><code class="language-bash">systemctl restart firewalld.service
-</code></pre>
-<pre><code class="language-bash">[root@hostname ~]# firewall-cmd --list-all
-public (active)
-  target: default
-  icmp-block-inversion: no
-  interfaces: ens192
-  sources:
-  services: cockpit dhcpv6-client snmp ssh
-  ports: 9200/tcp
-  protocols:
-  forward: no
-  masquerade: no
-  forward-ports:
-  source-ports:
-  icmp-blocks:
-  rich rules:
-
-</code></pre>
+<p><strong>Add Port/Protocol Permanently:</strong>
+<div class="highlight"><pre><span></span><code>firewall-cmd<span class="w"> </span>--add-port<span class="o">=</span>xxxx/tcp<span class="w"> </span>--permanent<span class="w"> </span>
+</code></pre></div></p>
+<p><strong>NOTE: YOU MUST RESTART THE SERVICE FOR CHANGES TO TAKE EFFECT!!!</strong>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>firewalld.service
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@hostname<span class="w"> </span>~<span class="o">]</span><span class="c1"># firewall-cmd --list-all</span>
+public<span class="w"> </span><span class="o">(</span>active<span class="o">)</span>
+<span class="w">  </span>target:<span class="w"> </span>default
+<span class="w">  </span>icmp-block-inversion:<span class="w"> </span>no
+<span class="w">  </span>interfaces:<span class="w"> </span>ens192
+<span class="w">  </span>sources:
+<span class="w">  </span>services:<span class="w"> </span>cockpit<span class="w"> </span>dhcpv6-client<span class="w"> </span>snmp<span class="w"> </span>ssh
+<span class="w">  </span>ports:<span class="w"> </span><span class="m">9200</span>/tcp
+<span class="w">  </span>protocols:
+<span class="w">  </span>forward:<span class="w"> </span>no
+<span class="w">  </span>masquerade:<span class="w"> </span>no
+<span class="w">  </span>forward-ports:
+<span class="w">  </span>source-ports:
+<span class="w">  </span>icmp-blocks:
+<span class="w">  </span>rich<span class="w"> </span>rules:
+</code></pre></div>
 
 
 

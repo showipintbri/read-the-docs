@@ -1702,37 +1702,37 @@
 <li><code>&gt;&gt; output.txt 2&gt;&amp;1</code></li>
 </ul>
 <h2 id="for-loop">For Loop</h2>
-<pre><code class="language-bash">for i in $(ls *.*)
-do;
-  mv $i prefix_$i;
-done
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span>*.*<span class="k">)</span>
+<span class="k">do</span><span class="p">;</span>
+<span class="w">  </span>mv<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>prefix_<span class="nv">$i</span><span class="p">;</span>
+<span class="k">done</span>
+</code></pre></div>
 <p><strong>or as a one-liner:</strong> <code>for i in $(ls *.*) do; mv $i prefix_$i; done</code></p>
 <h2 id="for-loop-in-range-of-numbers">For Loop in Range of Numbers</h2>
-<pre><code class="language-bash">for i in {1..450}
-do
-wget http://hostname.fqdn:8081/$i -O /dev/null
-sleep 1
-done
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..450<span class="o">}</span>
+<span class="k">do</span>
+wget<span class="w"> </span>http://hostname.fqdn:8081/<span class="nv">$i</span><span class="w"> </span>-O<span class="w"> </span>/dev/null
+sleep<span class="w"> </span><span class="m">1</span>
+<span class="k">done</span>
+</code></pre></div>
 <p><strong>or as a one-liner:</strong> <code>for i in {1..450}; do wget http://hostname.fqdn:8081/$i -O /dev/null; sleep 1; done</code></p>
 <h2 id="multi-line-append">Multi-line Append</h2>
-<pre><code class="language-bash">cat &gt;&gt; /path/to/existingFile.text&lt;&lt; EOF
-some text line 1
-some text line 2
-some text line 3
-EOF
-</code></pre>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>/path/to/existingFile.text<span class="s">&lt;&lt; EOF</span>
+<span class="s">some text line 1</span>
+<span class="s">some text line 2</span>
+<span class="s">some text line 3</span>
+<span class="s">EOF</span>
+</code></pre></div>
 <h2 id="users-and-groups">Users and Groups</h2>
 <h3 id="create-a-new-user">Create a new user</h3>
-<pre><code class="language-bash">useradd [options] [user_name]
-</code></pre>
+<div class="highlight"><pre><span></span><code>useradd<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>user_name<span class="o">]</span>
+</code></pre></div>
 <h3 id="assignchange-a-password-for-a-user">Assign/Change a password for a user</h3>
-<pre><code class="language-bash">passwd [user_name]
-</code></pre>
+<div class="highlight"><pre><span></span><code>passwd<span class="w"> </span><span class="o">[</span>user_name<span class="o">]</span>
+</code></pre></div>
 <h3 id="add-a-user-to-a-group">Add a User to a Group</h3>
-<pre><code class="language-bash">usermod -a -G [group_name] [user_name]
-</code></pre>
+<div class="highlight"><pre><span></span><code>usermod<span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span><span class="o">[</span>group_name<span class="o">]</span><span class="w"> </span><span class="o">[</span>user_name<span class="o">]</span>
+</code></pre></div>
 
 
 

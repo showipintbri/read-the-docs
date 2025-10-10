@@ -1623,41 +1623,41 @@
 
 
 <h1 id="systemctl">systemctl</h1>
-<pre><code class="language-bash">systemctl start [unit]
-systemctl status [unit]
-systemctl stop [unit]
-systemctl reload [unit]
-systemctl restart [unit]
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>start<span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
+systemctl<span class="w"> </span>status<span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
+systemctl<span class="w"> </span>stop<span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
+systemctl<span class="w"> </span>reload<span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
 
-systemctl enable [unit]
-systemctl disable [unit]
-systemctl list-units [unit]
-systemctl list-sockets [unit]
-systemctl list-unit-files [pattern]
-</code></pre>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
+systemctl<span class="w"> </span>disable<span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
+systemctl<span class="w"> </span>list-units<span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
+systemctl<span class="w"> </span>list-sockets<span class="w"> </span><span class="o">[</span>unit<span class="o">]</span>
+systemctl<span class="w"> </span>list-unit-files<span class="w"> </span><span class="o">[</span>pattern<span class="o">]</span>
+</code></pre></div>
 <h2 id="example-service-files">Example *.service files</h2>
 <p>Service files are typically found in: <code>/etc/systemd/system/[service_name].service</code>
 Service can only have 1 <code>ExecStart</code> statement.</p>
-<pre><code class="language-bash">[Unit]
-Description=cloudflared
-After=network.target
+<div class="highlight"><pre><span></span><code><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>cloudflared
+<span class="nv">After</span><span class="o">=</span>network.target
 
-[Service]
-TimeoutStartSec=0
-Type=notify
-ExecStart=/usr/bin/cloudflared --no-autoupdate tunnel run --token x0x0x0x0x0x0x0x0x0x
-Restart=on-failure
-RestartSec=5s
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">TimeoutStartSec</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">Type</span><span class="o">=</span>notify
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/cloudflared<span class="w"> </span>--no-autoupdate<span class="w"> </span>tunnel<span class="w"> </span>run<span class="w"> </span>--token<span class="w"> </span>x0x0x0x0x0x0x0x0x0x
+<span class="nv">Restart</span><span class="o">=</span>on-failure
+<span class="nv">RestartSec</span><span class="o">=</span>5s
 
-[Install]
-WantedBy=multi-user.target
-</code></pre>
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div>
 <h3 id="showlist-all-services">Show/List All Services</h3>
-<pre><code class="language-bash">systemctl list-units --all *.service
-</code></pre>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>list-units<span class="w"> </span>--all<span class="w"> </span>*.service
+</code></pre></div>
 <h3 id="show-details-about-a-single-service">Show Details about a Single Service</h3>
-<pre><code class="language-bash">systemctl status [service_name]
-</code></pre>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span><span class="o">[</span>service_name<span class="o">]</span>
+</code></pre></div>
 <h3 id="references"><strong>References:</strong></h3>
 
 

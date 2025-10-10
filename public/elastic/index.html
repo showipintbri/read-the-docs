@@ -1509,26 +1509,26 @@
 <h2 id="elasticsearch-api-wcurl">Elasticsearch API w/CURL</h2>
 <p>tcp/9200 is the default port.</p>
 <p><strong>HTTP:</strong></p>
-<pre><code>curl http://localhost:9200
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl http://localhost:9200
+</code></pre></div>
 <p>If you get an error: <code>curl: (52) Empty reply from server</code> this likely means you need to use <code>https</code>.</p>
-<p><strong>HTTPS:</strong></p>
-<pre><code>curl https://localhost:9200
-</code></pre>
+<p><strong>HTTPS:</strong>
+<div class="highlight"><pre><span></span><code>curl https://localhost:9200
+</code></pre></div></p>
 <p>If you get an error about trusted certificates you can use the <code>-k</code> flag to tell CURL to ignore untrusted certificates.</p>
-<p><strong>HTTPS, Ignore Untrusted Certificates:</strong></p>
-<pre><code>curl -k https://localhost:9200
-</code></pre>
+<p><strong>HTTPS, Ignore Untrusted Certificates:</strong>
+<div class="highlight"><pre><span></span><code>curl -k https://localhost:9200
+</code></pre></div></p>
 <p>If you get an error about the 'security realm', you'll need to add HTTP Basic Authentication to your command.</p>
-<p><strong>HTTPS, Ignore Untrusted Certificates w/Authentication:</strong></p>
-<pre><code>curl -k -u elastic:[password] https://localhost:9200
-</code></pre>
-<p><strong>List Indexes:</strong></p>
-<pre><code>curl -k -u elastic:[password] -XGET &quot;https://localhost:9200/_aliases?pretty=true&quot;
-</code></pre>
-<p><strong>Delete Index:</strong></p>
-<pre><code>curl -k -u elastic:[password] -XDELETE &quot;https://localhost:9200/[explicit_index_name]&quot;
-</code></pre>
+<p><strong>HTTPS, Ignore Untrusted Certificates w/Authentication:</strong>
+<div class="highlight"><pre><span></span><code>curl -k -u elastic:[password] https://localhost:9200
+</code></pre></div></p>
+<p><strong>List Indexes:</strong>
+<div class="highlight"><pre><span></span><code>curl -k -u elastic:[password] -XGET &quot;https://localhost:9200/_aliases?pretty=true&quot;
+</code></pre></div></p>
+<p><strong>Delete Index:</strong>
+<div class="highlight"><pre><span></span><code>curl -k -u elastic:[password] -XDELETE &quot;https://localhost:9200/[explicit_index_name]&quot;
+</code></pre></div></p>
 <h1 id="references">References:</h1>
 <ul>
 <li><a href="https://linuxhint.com/elasticsearch-delete-index-how-to/">https://linuxhint.com/elasticsearch-delete-index-how-to/</a></li>

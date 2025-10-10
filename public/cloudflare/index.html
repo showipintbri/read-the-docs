@@ -1514,7 +1514,7 @@
 <p>Cloudflared (cloud-flare-dee) is a light weight multi-purpose daemon.</p>
 <p>It can be invoked manually or through scripting/service files to manage tunnels. You can run many instances of cloudflared at once if needed. For example, I run one instance acting as a DNS to DNS over HTTPS proxy and another instance as a tunnel to reach the webserver on that box which is listening on localhost.</p>
 <h3 id="example-cloudflared-service-file-for-dns-to-dns-over-https-proxy">Example cloudflared service file for DNS to DNS over HTTPS Proxy</h3>
-<pre><code>[Unit]
+<div class="highlight"><pre><span></span><code>[Unit]
 Description=DNS over HTTPS (DoH) proxy client
 Wants=network-online.target nss-lookup.target
 Before=nss-lookup.target
@@ -1530,7 +1530,7 @@ RestartSec=5s
 
 [Install]
 WantedBy=multi-user.target
-</code></pre>
+</code></pre></div>
 
 
 

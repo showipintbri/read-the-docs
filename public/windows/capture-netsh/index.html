@@ -1593,15 +1593,15 @@
 
 
 <h1 id="packet-capture-using-netsh">Packet Capture Using <code>netsh</code></h1>
-<p><strong>NOTE:</strong> Requires elevated privileges.</p>
-<pre><code>C:\Users\tony.e&gt;netsh trace start capture=yes tracefile=C:\Users\tony.e\Desktop\netsh.etl
+<p><strong>NOTE:</strong> Requires elevated privileges.
+<div class="highlight"><pre><span></span><code>C:\Users\tony.e&gt;netsh trace start capture=yes tracefile=C:\Users\tony.e\Desktop\netsh.etl
 The requested operation requires elevation (Run as administrator).
-</code></pre>
+</code></pre></div></p>
 <h2 id="start-capture">Start Capture</h2>
-<pre><code>netsh trace start capture=yes tracefile=C:\Users\tony.e\Desktop\netsh.etl
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>C:\WINDOWS\system32&gt;netsh trace start capture=yes tracefile=C:\Users\tony.e\Desktop\netsh.etl
+<div class="highlight"><pre><span></span><code>netsh trace start capture=yes tracefile=C:\Users\tony.e\Desktop\netsh.etl
+</code></pre></div>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>C:\WINDOWS\system32&gt;netsh trace start capture=yes tracefile=C:\Users\tony.e\Desktop\netsh.etl
 
 Trace configuration:
 -------------------------------------------------------------------
@@ -1611,30 +1611,30 @@ Append:             Off
 Circular:           On
 Max Size:           512 MB
 Report:             Off
-</code></pre>
+</code></pre></div></p>
 <h2 id="stop-capture">Stop Capture</h2>
-<pre><code>netsh trace stop
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>C:\WINDOWS\system32&gt;netsh trace stop
+<div class="highlight"><pre><span></span><code>netsh trace stop
+</code></pre></div>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>C:\WINDOWS\system32&gt;netsh trace stop
 Merging traces ... done
 Generating data collection ... done
 The trace file and additional troubleshooting information have been compiled as &quot;C:\Users\tony.e\Desktop\netsh.cab&quot;.
 File location = C:\Users\tony.e\Desktop\netsh.etl
 Tracing session was successfully stopped.
-</code></pre>
+</code></pre></div></p>
 <h2 id="convert-etl-to-pcap">Convert *.etl to *.pcap</h2>
 <p>Download CLI conversion utility: <a href="https://github.com/microsoft/etl2pcapng/releases">https://github.com/microsoft/etl2pcapng/releases</a></p>
-<p>Run utility via Windows Command Prompt:</p>
-<pre><code>etl2pcapng &lt;infile&gt; &lt;outfile&gt;
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>C:\Users\tony.e\Downloads\etl2pcapng\x64&gt;etl2pcapng.exe C:\Users\tony.e\Desktop\netsh.etl C:\Users\tony.e\Desktop\netsh.pcap
+<p>Run utility via Windows Command Prompt:
+<div class="highlight"><pre><span></span><code>etl2pcapng &lt;infile&gt; &lt;outfile&gt;
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>C:\Users\tony.e\Downloads\etl2pcapng\x64&gt;etl2pcapng.exe C:\Users\tony.e\Desktop\netsh.etl C:\Users\tony.e\Desktop\netsh.pcap
 IF: medium=eth                  ID=0    IfIndex=3       VlanID=0
 IF: medium=wifi                 ID=1    IfIndex=4
 IF: medium=eth                  ID=2    IfIndex=53      VlanID=0
 Converted 1024 frames
-</code></pre>
+</code></pre></div></p>
 
 
 

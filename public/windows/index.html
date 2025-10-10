@@ -1534,21 +1534,21 @@
 
 <h1 id="windows">Windows</h1>
 <h2 id="for-loop-w-range-of-numbers">For Loop w/ Range of Numbers</h2>
-<p>Step from 1 to 450 in steps of 1.</p>
-<pre><code>FOR /L %i IN (1,1,450) DO curl http://hostname.fqdn/%i -o NUL: -s &amp;&amp; TIMEOUT /T 1 /NOBREAK
-</code></pre>
+<p>Step from 1 to 450 in steps of 1.
+<div class="highlight"><pre><span></span><code>FOR /L %i IN (1,1,450) DO curl http://hostname.fqdn/%i -o NUL: -s &amp;&amp; TIMEOUT /T 1 /NOBREAK
+</code></pre></div></p>
 <h2 id="for-loop-w-files">For Loop w/ Files</h2>
-<p>Base64 encode files from folder.</p>
-<pre><code>FOR /F %i IN ('dir *.txt') DO certutil -encode %i %i.b64
-</code></pre>
+<p>Base64 encode files from folder.
+<div class="highlight"><pre><span></span><code>FOR /F %i IN (&#39;dir *.txt&#39;) DO certutil -encode %i %i.b64
+</code></pre></div></p>
 <h2 id="wsl2-error">WSL2 Error</h2>
-<p>To fix the error:</p>
-<pre><code>Logon failure: the user has not been granted the requested logon type at this computer.                                                                                                       
+<p>To fix the error:
+<div class="highlight"><pre><span></span><code>Logon failure: the user has not been granted the requested logon type at this computer.                                                                                                       
 Press any key to continue... 
-</code></pre>
-<p>As Administrator run in Powershell:</p>
-<pre><code>Get-Service vmcompute | Restart-Service
-</code></pre>
+</code></pre></div></p>
+<p>As Administrator run in Powershell:
+<div class="highlight"><pre><span></span><code>Get-Service vmcompute | Restart-Service
+</code></pre></div></p>
 <p>Then start your WSL2 VM again.</p>
 <h2 id="wsl2-folder-location">WSL2 Folder Location</h2>
 <p><code>\\wsl$\[wsl_vm-name]\home</code> maps to the <code>/home/</code> folder inside the VM.</p>

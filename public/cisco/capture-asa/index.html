@@ -1630,29 +1630,29 @@
 
 <h1 id="packet-captures-asa">Packet Captures: ASA</h1>
 <h2 id="start-a-capture">Start a Capture</h2>
-<pre><code>enable
+<div class="highlight"><pre><span></span><code>enable
 capture [name] interface [int_name] match ip [src_host] [src_subnet_mask] [dst_host] [dst_subnet_mask]
 
 Example:
 capture testcapture interface inside match ip 192.168.100.99 255.255.255.255 8.8.8.8 255.255.255.255
-</code></pre>
+</code></pre></div>
 <h2 id="stop-a-capture">Stop a Capture</h2>
-<pre><code>no capture [name] interface [int_name]
-</code></pre>
+<div class="highlight"><pre><span></span><code>no capture [name] interface [int_name]
+</code></pre></div>
 <h2 id="show-the-captured-packets">Show the Captured Packets</h2>
-<p>Only shows ASCII output.</p>
-<pre><code>show capture [name]
-</code></pre>
+<p>Only shows ASCII output.
+<div class="highlight"><pre><span></span><code>show capture [name]
+</code></pre></div></p>
 <h2 id="clear-the-capture-buffer">Clear the Capture Buffer</h2>
-<p>This removes the captured data but keeps the 'capture configs' in place incase you need to re-run them using the same name.</p>
-<pre><code>clear capture [name]
+<p>This removes the captured data but keeps the 'capture configs' in place incase you need to re-run them using the same name.
+<div class="highlight"><pre><span></span><code>clear capture [name]
 
 clear capture /all #Clears the buffers for all captures
-</code></pre>
+</code></pre></div></p>
 <h2 id="download-the-capture">Download the Capture</h2>
-<p>From a workstation navigate to: <code>https://&lt;ip_of_asa&gt;/admin/capture/&lt;capture_name&gt;/pcap</code> or from the ASA:</p>
-<pre><code>copy /pcap capture:&lt;capture-name&gt; tftp://&lt;server-ip-address&gt;
-</code></pre>
+<p>From a workstation navigate to: <code>https://&lt;ip_of_asa&gt;/admin/capture/&lt;capture_name&gt;/pcap</code> or from the ASA:
+<div class="highlight"><pre><span></span><code>copy /pcap capture:&lt;capture-name&gt; tftp://&lt;server-ip-address&gt;
+</code></pre></div></p>
 
 
 

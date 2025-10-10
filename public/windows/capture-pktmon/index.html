@@ -1641,15 +1641,15 @@
 
 
 <h1 id="packet-capture-using-pktmon">Packet Capture Using <code>pktmon</code></h1>
-<p><strong>NOTE:</strong> Requires elevated privileges (run Command Prompt as Administrator)</p>
-<pre><code>C:\Users\anthony.efantis&gt;pktmon list
+<p><strong>NOTE:</strong> Requires elevated privileges (run Command Prompt as Administrator)
+<div class="highlight"><pre><span></span><code>C:\Users\anthony.efantis&gt;pktmon list
 Failed to communicate with the PktMon driver. Access is denied.
-</code></pre>
+</code></pre></div></p>
 <h2 id="start-capture">Start Capture</h2>
-<pre><code>pktmon start --capture
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>C:\WINDOWS\system32&gt;pktmon start --capture
+<div class="highlight"><pre><span></span><code>pktmon start --capture
+</code></pre></div>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>C:\WINDOWS\system32&gt;pktmon start --capture
 
 Logger Parameters:
     Logger name:        PktMon
@@ -1683,33 +1683,33 @@ Packet Filters:
     11 SenseNdr                             0x2f
     12 SenseNdr                             0x73
     13 SenseNdr                             FC
-</code></pre>
+</code></pre></div></p>
 <h2 id="stop-capture">Stop Capture</h2>
-<pre><code>pktmon stop
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>C:\WINDOWS\system32&gt;pktmon stop
+<div class="highlight"><pre><span></span><code>pktmon stop
+</code></pre></div>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>C:\WINDOWS\system32&gt;pktmon stop
 Flushing logs...
 Merging metadata...
 Log file: C:\WINDOWS\system32\PktMon.etl (No events lost)
-</code></pre>
+</code></pre></div></p>
 <h2 id="convert-etl-to-pcap">Convert *.etl to *.pcap</h2>
-<pre><code>pktmon etl2pcap &lt;filename.etl&gt; --out &lt;filename.pcap&gt;
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>C:\WINDOWS\system32&gt;pktmon etl2pcap PktMon.etl --out pktmon.pcap
+<div class="highlight"><pre><span></span><code>pktmon etl2pcap &lt;filename.etl&gt; --out &lt;filename.pcap&gt;
+</code></pre></div>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>C:\WINDOWS\system32&gt;pktmon etl2pcap PktMon.etl --out pktmon.pcap
 Processing...
 
 Packets total:       8106
 Packet drop count:   0
 Packets formatted:   8106
 Formatted file:      pktmon.pcap
-</code></pre>
+</code></pre></div></p>
 <h2 id="optional-choose-an-interface-to-capture-from">Optional: Choose an Interface to capture from</h2>
-<pre><code>pktmon list
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code>C:\WINDOWS\system32&gt;pktmon list
+<div class="highlight"><pre><span></span><code>pktmon list
+</code></pre></div>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>C:\WINDOWS\system32&gt;pktmon list
 
 Network Adapters:
    Id MAC Address       Name
@@ -1719,10 +1719,10 @@ Network Adapters:
    11 00-FF-70-07-00-8A TAP-Windows Adapter V9
   241 00-00-50-01-00-41 Virtual Machine
   121 00-00-50-0E-00-EF vEthernet (WSL)
-</code></pre>
+</code></pre></div></p>
 <h3 id="use-the-interface-id-in-the-start-command">Use the Interface ID in the <code>start</code> command</h3>
-<pre><code>pktmon start --capture -c 10
-</code></pre>
+<div class="highlight"><pre><span></span><code>pktmon start --capture -c 10
+</code></pre></div>
 
 
 

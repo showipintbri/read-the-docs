@@ -1592,8 +1592,8 @@
 <li><code>syslog_*</code></li>
 </ul>
 <p>Recently when building some parsers I was receiving a log like this on a "Plain Text/RAW" input.  </p>
-<pre><code class="language-text">&lt;27&gt;Nov 29 15:05:42 blah blah blah msg msg msg
-</code></pre>
+<div class="highlight"><pre><span></span><code>&lt;27&gt;Nov 29 15:05:42 blah blah blah msg msg msg
+</code></pre></div>
 <p>I was trying to parse out the number from between the left and right arrows, which is the Syslog Priority value and put it in a field named: <code>syslog_priority</code>. This wasn't working. After hours of futtsing with it, it was determined that the cause of the failures was when I started a field name with <code>syslog_</code>. I tested and tested and got the same results with each test: any time <code>syslog_</code> was in the field name the pipeline rule wouldn't work.</p>
 <p><strong>Assumption:</strong> I'm sure this is because how <em>syslog</em> messages are recieved and processed under the hood, but I can not confirm that.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -1604,12 +1604,12 @@
 <li>Check logs for errors</li>
 </ul>
 <p><strong>Errors Seen:</strong></p>
-<pre><code class="language-text">java.nio.file.FileSystemNotFoundException: /usr/share/graylog-server/plugin/graylog-plugin-enterprise-4.2.1.jar
-</code></pre>
+<div class="highlight"><pre><span></span><code>java.nio.file.FileSystemNotFoundException: /usr/share/graylog-server/plugin/graylog-plugin-enterprise-4.2.1.jar
+</code></pre></div>
 <p>When you, <code>ls /usr/share/graylog-server/plugin/</code>, the files throwing the error aren't there. </p>
 <p>Try removing the enterprise plug-in <strong><em>assuming you aren't using the enterprise features</em></strong>:</p>
-<pre><code class="language-bash">yum remove graylog-enterprise-plugins
-</code></pre>
+<div class="highlight"><pre><span></span><code>yum<span class="w"> </span>remove<span class="w"> </span>graylog-enterprise-plugins
+</code></pre></div>
 
 
 

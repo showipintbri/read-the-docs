@@ -1716,52 +1716,52 @@
 <h2 id="create-a-dictionary">Create a Dictionary</h2>
 <p>Before you can replace, update or delete any keys or values you must instantiate the dictionary.</p>
 <h3 id="empty-dictionary">Empty dictionary:</h3>
-<pre><code class="language-python">my_dict = {}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{}</span>
+</code></pre></div>
 <h3 id="or-instantiate-with-keys-and-values">Or instantiate with keys and values:</h3>
-<pre><code class="language-python">my_dict = {'key1': 'value1'}
-or
-my_dict['key1'] = 'value1'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">}</span>
+<span class="ow">or</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value1&#39;</span>
+</code></pre></div>
 <p>You can call the object directly or print the dictionary:</p>
-<pre><code class="language-python">&gt;&gt;&gt; my_dict = {'key1': 'value1'}
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">}</span>
 
-&gt;&gt;&gt; my_dict
-{'key1': 'value1'}
-</code></pre>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span>
+<span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">}</span>
+</code></pre></div>
 <p>Using <code>print()</code>:</p>
-<pre><code class="language-python">&gt;&gt;&gt; my_dict = {'key1': 'value1'}
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">}</span>
 
-&gt;&gt;&gt; print(my_dict)
-{'key1': 'value1'}
-</code></pre>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">}</span>
+</code></pre></div>
 <h2 id="add-key-value-to-existing-dictionary">Add Key &amp; Value to Existing Dictionary</h2>
 <ul>
 <li>Key must be unique</li>
 <li>If Key is not unique Value will be overwritten.</li>
 </ul>
 <h3 id="start-with-a-dictionary">Start with a dictionary</h3>
-<pre><code class="language-python">&gt;&gt;&gt; my_dict = {'key1': 'value1'}
-&gt;&gt;&gt; my_dict
-{'key1': 'value1'}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span>
+<span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">}</span>
+</code></pre></div>
 <h3 id="create-a-new-key-with-value">Create a new Key with Value</h3>
-<pre><code class="language-python">&gt;&gt;&gt; my_dict['key2'] = 'value0'
-&gt;&gt;&gt; my_dict
-{'key1': 'value1', 'key2': 'value0'}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;key2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value0&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span>
+<span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;value0&#39;</span><span class="p">}</span>
+</code></pre></div>
 <h3 id="update-the-value-for-existing-key-overwrite">Update the Value for existing Key (overwrite)</h3>
-<pre><code class="language-python">&gt;&gt;&gt; my_dict['key2'] = 'value1'
-&gt;&gt;&gt; my_dict
-{'key1': 'value1', 'key2': 'value1'}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;key2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value1&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span>
+<span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">}</span>
+</code></pre></div>
 <h2 id="add-multiple-values-to-key">Add multiple Values to Key</h2>
 <p>Because a Value is a single object, I commonly use list's when I need a Key to contain multiple Values.</p>
 <p>Convert your Key with a single value to a Key with a list object as a Value:</p>
-<pre><code class="language-python">&gt;&gt;&gt; my_dict['key1'] = [my_dict['key1']]
-&gt;&gt;&gt; my_dict
-{'key1': ['value1']}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">my_dict</span>
+<span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;value1&#39;</span><span class="p">]}</span>
+</code></pre></div>
 
 
 

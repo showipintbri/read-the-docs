@@ -1479,15 +1479,15 @@
 
 <h1 id="selinux">SELinux</h1>
 <p>Security-Enhanced Linux</p>
-<pre><code class="language-bash">[root@hostname ~]# getenforce
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@hostname<span class="w"> </span>~<span class="o">]</span><span class="c1"># getenforce</span>
 Enforcing
-[root@hostname ~]# setenforce 0
-[root@hostname ~]# getenforce
+<span class="o">[</span>root@hostname<span class="w"> </span>~<span class="o">]</span><span class="c1"># setenforce 0</span>
+<span class="o">[</span>root@hostname<span class="w"> </span>~<span class="o">]</span><span class="c1"># getenforce</span>
 Permissive
-[root@hostname ~]#
-</code></pre>
-<pre><code>semanage port -a -t http_port_t -p tcp 9200
-</code></pre>
+<span class="o">[</span>root@hostname<span class="w"> </span>~<span class="o">]</span><span class="c1">#</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>semanage port -a -t http_port_t -p tcp 9200
+</code></pre></div>
 
 
 
