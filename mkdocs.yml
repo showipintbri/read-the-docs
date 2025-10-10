@@ -40,6 +40,10 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+plugins:
+  - search
+  - mermaid2
+
 # Page tree
 nav:
   - Home: 
