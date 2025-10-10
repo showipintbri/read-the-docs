@@ -73,3 +73,5 @@ nav:
     - "Packet Capture: pktmon": windows/capture-pktmon.md
   - Elastic:
     - elastic/index.md
+  - "*arr App's":
+    - _arr_apps/index.md
